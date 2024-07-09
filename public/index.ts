@@ -1,0 +1,15 @@
+export { default as Facebook } from "./svg/Facebook.svg";
+export { default as FruitBox } from "./svg/FruitBox.svg";
+export { default as Gloves } from "./svg/Gloves.svg";
+export { default as Google } from "./svg/Google.svg";
+export { default as GreenHouse } from "./svg/GreenHouse.svg";
+export { default as Instagram } from "./svg/Instagram.svg";
+export { default as Location } from "./svg/Location.svg";
+export { default as Mail } from "./svg/Mail.svg";
+export { default as Phone } from "./svg/Phone.svg";
+export { default as Seeding } from "./svg/Seeding.svg";
+export { default as Sprout } from "./svg/Sprout.svg";
+export { default as Tools } from "./svg/Tools.svg";
+export { default as Twitter } from "./svg/Twitter.svg";
+export { default as WateringCan } from "./svg/WateringCan.svg";
+export { default as Quote } from "./svg/Quote.svg";

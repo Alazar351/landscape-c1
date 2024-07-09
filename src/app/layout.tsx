@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Rubik, Jost } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const rubik = Rubik({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"], variable: "--jost" });
@@ -17,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} ${jost.variable}`}>{children}</body>
+      <body className={`${rubik.className} ${jost.variable}`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
