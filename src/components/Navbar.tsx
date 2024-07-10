@@ -43,7 +43,12 @@ export default function Navbar() {
   });
 
   return (
-    <div className={cn("", pathname == "/" && "container px-4")}>
+    <div
+      className={cn(
+        "z-20",
+        pathname == "/" && "container absolute inset-x-0 top-0 px-4",
+      )}
+    >
       <TopBanner />
       <div
         className={cn(
