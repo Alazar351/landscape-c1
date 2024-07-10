@@ -41,12 +41,12 @@ export default function Hero() {
           variants={containerVariants}
           className="flex flex-col items-center border border-transparent md:items-start"
         >
-          <motion.h1
+          <motion.p
             variants={itemVariants}
             className="font-medium uppercase tracking-[4px] text-primary"
           >
             Premium Landscaping Services
-          </motion.h1>
+          </motion.p>
           <motion.p
             variants={itemVariants}
             className="mt-3 text-wrap text-center font-jost text-[50px] font-semibold tracking-[-0.8px] text-primary-foreground md:text-left"
