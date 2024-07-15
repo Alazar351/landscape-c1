@@ -24,7 +24,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative flex h-[100vh] items-center justify-center md:items-end">
+    <section className="relative flex h-[100vh] items-center justify-center overflow-hidden md:items-end">
       <Image
         src={Bg}
         alt="background"
@@ -41,12 +41,12 @@ export default function Hero() {
           variants={containerVariants}
           className="flex flex-col items-center border border-transparent md:items-start"
         >
-          <motion.p
+          <motion.h1
             variants={itemVariants}
             className="font-medium uppercase tracking-[4px] text-primary"
           >
             Premium Landscaping Services
-          </motion.p>
+          </motion.h1>
           <motion.p
             variants={itemVariants}
             className="mt-3 text-wrap text-center font-jost text-[50px] font-semibold tracking-[-0.8px] text-primary-foreground md:text-left"

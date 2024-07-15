@@ -42,7 +42,7 @@ export default function MainServices() {
             href="/Services/Landscaping"
             className="text-[20px] font-bold text-primary-foreground hover:text-primary"
           >
-            <p className="">Landscaping Services</p>
+            <p>Landscaping Services</p>
           </Link>
           <p className="mt-4 text-primary-foreground">
             Enhance your outdoor space with our professional landscaping

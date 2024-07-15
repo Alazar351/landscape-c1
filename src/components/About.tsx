@@ -7,6 +7,35 @@ import AnimatedCounter from "./AnimatedCounter";
 import { Gear, Stats } from "../../public";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
+
+const fadeInAnimationBT = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+const fadeInAnimationLR = {
+  initial: {
+    opacity: 0,
+    x: -25,
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export default function About() {
   return (
@@ -28,11 +57,19 @@ export default function About() {
           </div>
         </div>
         <div className="flex w-full flex-col">
-          <div className="mb-14">
-            <p className="uppercase tracking-[3.8px] text-primary">About us</p>
-            <p className="my-5 text-[46px] font-medium tracking-[-1px] text-[#181818]">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInAnimationBT}
+            className="mb-14"
+          >
+            <h2 className="uppercase tracking-[3.8px] text-primary">
+              About us
+            </h2>
+            <h3 className="my-5 font-jost text-[46px] font-medium tracking-[-1px] text-[#181818]">
               Your Trusted Landscaping Partner
-            </p>
+            </h3>
             <p className="text-muted-foreground">
               With over two decades of expertise in the landscaping industry, we
               are dedicated to transforming your outdoor spaces into beautiful,
@@ -40,10 +77,16 @@ export default function About() {
               lawn maintenance, our skilled professionals ensure exceptional
               quality and service.
             </p>
-          </div>
+          </motion.div>
           <div className="flex justify-between">
             <div className="flex flex-col gap-10">
-              <div className="flex items-center justify-center gap-6">
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.9 }}
+                variants={fadeInAnimationLR}
+                className="flex items-center justify-center gap-6"
+              >
                 <Gear className="size-[70px] fill-primary" />
                 <div>
                   <Link
@@ -56,8 +99,14 @@ export default function About() {
                     Tailored solutions for every project
                   </p>
                 </div>
-              </div>
-              <div className="flex items-center justify-center gap-6">
+              </motion.div>
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.9 }}
+                variants={fadeInAnimationLR}
+                className="flex items-center justify-center gap-6"
+              >
                 <Stats className="size-[70px] fill-primary" />
                 <div>
                   <Link
@@ -70,7 +119,7 @@ export default function About() {
                     Delivering excellence in every project
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <Image
               src={Img2}

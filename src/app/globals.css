@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 125 39% 94%;
+    --background: 120 39% 94%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 123 46% 38%;
+    --primary: 120 46% 38%;
     --primary-foreground: 151 63% 16%;
 
     --secondary: 210 40% 96.1%;
@@ -76,5 +76,12 @@
 
   .underline-effect::after {
     @apply absolute bottom-[-4px] left-0 h-[3px] w-full origin-bottom-right scale-x-0 bg-primary transition-transform duration-300 content-[''] hover:origin-bottom-left hover:scale-x-100;
+  }
+  .underline-effect-white {
+    @apply relative p-0;
+  }
+
+  .underline-effect-white::after {
+    @apply absolute bottom-[-4px] left-0 h-[3px] w-full origin-bottom-left scale-x-0 bg-white transition-transform duration-300 content-[''] hover:scale-x-100;
   }
 }
