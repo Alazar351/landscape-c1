@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Hero from "@/components/Hero";
 import MainServices from "@/components/MainServices";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Hero />
       <MainServices />
+      <About />
     </>
   );
 }

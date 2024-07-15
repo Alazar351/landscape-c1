@@ -13,3 +13,5 @@ export { default as Tools } from "./svg/Tools.svg";
 export { default as Twitter } from "./svg/Twitter.svg";
 export { default as WateringCan } from "./svg/WateringCan.svg";
 export { default as Quote } from "./svg/Quote.svg";
+export { default as Stats } from "./svg/Stats.svg";
+export { default as Gear } from "./svg/Gear.svg";
