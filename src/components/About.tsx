@@ -44,6 +44,7 @@ export default function About() {
         <div className="relative flex w-full flex-col items-center justify-center">
           <Image
             src={Img}
+            loading="lazy"
             alt="Professional gardener inspecting vibrant red flowers and potted plants in a greenhouse for a landscaping project."
             className="z-0 aspect-square rounded-full"
           />
