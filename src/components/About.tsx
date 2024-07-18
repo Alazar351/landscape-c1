@@ -49,10 +49,10 @@ export default function About() {
           />
           <div className="relative bottom-10 z-10 flex w-fit items-center justify-center rounded-md bg-primary p-3">
             <div className="flex h-[68px] w-[201px] items-center justify-center gap-2 rounded-md border border-white px-4 py-3 text-white">
-              <p className="text-[52px] font-medium">
+              <p className="text-[3.25rem] font-medium">
                 <AnimatedCounter from={0} to={20} />
               </p>
-              <p className="text-wrap text-[18px]">Years of experience</p>
+              <p className="text-wrap text-[1.125rem]">Years of experience</p>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function About() {
             <h2 className="uppercase tracking-[3.8px] text-primary">
               About us
             </h2>
-            <h3 className="my-5 font-jost text-[46px] font-medium tracking-[-1px] text-[#181818]">
+            <h3 className="my-5 font-jost text-[2.875rem] font-medium tracking-[-1px] text-[#181818]">
               Your Trusted Landscaping Partner
             </h3>
             <p className="text-muted-foreground">
@@ -91,7 +91,7 @@ export default function About() {
                 <div>
                   <Link
                     href="/Services"
-                    className="font-jost text-[20px] font-bold text-primary-foreground hover:text-primary"
+                    className="font-jost text-[1.25rem] font-bold text-primary-foreground hover:text-primary"
                   >
                     Expert Landscaping Services
                   </Link>
@@ -111,7 +111,7 @@ export default function About() {
                 <div>
                   <Link
                     href="/Services"
-                    className="font-jost text-[20px] font-bold text-primary-foreground hover:text-primary"
+                    className="font-jost text-[1.25rem] font-bold text-primary-foreground hover:text-primary"
                   >
                     Proven Track Record
                   </Link>

@@ -40,7 +40,7 @@ export default function MainServices() {
         <div className="p-7">
           <Link
             href="/Services/Landscaping"
-            className="text-[20px] font-bold text-primary-foreground hover:text-primary"
+            className="text-[1.25rem] font-bold text-primary-foreground hover:text-primary"
           >
             <p>Landscaping Services</p>
           </Link>
@@ -65,7 +65,7 @@ export default function MainServices() {
         <div className="p-7">
           <Link
             href="/Services/Pruning-Plants"
-            className="text-[20px] font-bold text-primary-foreground hover:text-primary"
+            className="text-[1.25rem] font-bold text-primary-foreground hover:text-primary"
           >
             <p className="">Plant Pruning Services</p>
           </Link>
@@ -90,7 +90,7 @@ export default function MainServices() {
         <div className="p-7">
           <Link
             href="/Services/Lawn-Maintenance"
-            className="text-[20px] font-bold text-primary-foreground hover:text-primary"
+            className="text-[1.25rem] font-bold text-primary-foreground hover:text-primary"
           >
             <p className="">Lawn Maintenance Services</p>
           </Link>
@@ -115,7 +115,7 @@ export default function MainServices() {
         <div className="p-7">
           <Link
             href="/Services/Irrigation-and-Drainage"
-            className="text-[20px] font-bold text-primary-foreground hover:text-primary"
+            className="text-[1.25rem] font-bold text-primary-foreground hover:text-primary"
           >
             <p className="">Irrigation and Drainage Services</p>
           </Link>

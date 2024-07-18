@@ -130,7 +130,7 @@ export default function Team() {
             Our Creative Team
           </p>
         </div>
-        <div className="grid gap-[30px] sm:grid-cols-3">
+        <div className="grid gap-[30px] sm:grid-cols-2 md:grid-cols-3">
           {members.map((member, idx) => (
             <motion.div
               initial="initial"

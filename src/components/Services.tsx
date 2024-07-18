@@ -78,7 +78,7 @@ export default function Services() {
           <h2 className="uppercase tracking-[3.8px] text-primary">
             What we do
           </h2>
-          <p className="my-5 font-jost text-[46px] font-medium tracking-[-1px] text-[#181818]">
+          <p className="my-5 font-jost text-[2.875rem] font-medium tracking-[-1px] text-[#181818]">
             What You Can Do with Gettree
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function Services() {
                 <div className="flex flex-col items-center sm:items-start">
                   <Link
                     href={service.href}
-                    className="underline-effect-white mb-4 font-jost text-[22px] font-bold text-primary-foreground group-hover:text-white"
+                    className="underline-effect-white mb-4 font-jost text-[1.375rem] font-bold text-primary-foreground group-hover:text-white"
                   >
                     {service.title}
                   </Link>

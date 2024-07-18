@@ -49,7 +49,7 @@ export default function Hero() {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="mt-3 text-wrap text-center font-jost text-[50px] font-semibold tracking-[-0.8px] text-primary-foreground md:text-left"
+            className="mt-3 text-wrap text-center font-jost text-[3.125rem] font-semibold tracking-[-0.8px] text-primary-foreground md:text-left"
           >
             Transforming Your Outdoor Spaces with Expert Landscaping
           </motion.p>
