@@ -10,18 +10,32 @@ import Bg from "../../public/assets/mask-testimonial-box.png";
 import { Quote } from "../../public";
 import { reviews } from "@/data/clients";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInAnimationBT } from "@/data/motions";
 
 export default function Testimonials() {
   return (
-    <section className="py-[60px]">
+    <section className="mb-[60px] py-[60px]">
       <div className="container flex flex-col items-center justify-center px-4">
         <div className="text-center">
-          <h2 className="uppercase tracking-[3.8px] text-primary">
+          <motion.h2
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInAnimationBT}
+            className="uppercase tracking-[3.8px] text-primary"
+          >
             Client Testimonials
-          </h2>
-          <p className="my-5 font-jost text-[2.875rem] font-medium tracking-[-1px] text-[#181818]">
+          </motion.h2>
+          <motion.p
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInAnimationBT}
+            className="my-5 font-jost text-[2.875rem] font-medium tracking-[-1px] text-[#181818]"
+          >
             What our clients say
-          </p>
+          </motion.p>
         </div>
         <Swiper
           slidesPerView={1}

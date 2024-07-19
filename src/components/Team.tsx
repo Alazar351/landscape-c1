@@ -93,6 +93,31 @@ const members: TeamType = [
       },
     ],
   },
+  {
+    name: "Jonny Sands",
+    position: "Gardener",
+    img: Team1,
+    logos: [
+      {
+        social: (
+          <Facebook className="size-[50px] rounded-md bg-primary fill-white stroke-white p-3 hover:fill-primary-foreground hover:stroke-primary-foreground" />
+        ),
+        href: "#",
+      },
+      {
+        social: (
+          <Twitter className="size-12 rounded-md bg-primary fill-white stroke-white p-3 hover:fill-primary-foreground hover:stroke-primary-foreground" />
+        ),
+        href: "#",
+      },
+      {
+        social: (
+          <Instagram className="size-12 rounded-md bg-primary fill-white stroke-white p-3 hover:fill-primary-foreground hover:stroke-primary-foreground" />
+        ),
+        href: "#",
+      },
+    ],
+  },
 ];
 
 const fadeInAnimationBT = {

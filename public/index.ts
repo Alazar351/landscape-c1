@@ -15,3 +15,4 @@ export { default as WateringCan } from "./svg/WateringCan.svg";
 export { default as Quote } from "./svg/Quote.svg";
 export { default as Stats } from "./svg/Stats.svg";
 export { default as Gear } from "./svg/Gear.svg";
+export { default as Check } from "./svg/Check.svg";
