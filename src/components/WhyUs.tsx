@@ -9,21 +9,21 @@ import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
 
 const reasons = [
   {
-    title: "Counter In Work.",
-    desc: "Lorem Ipsum is",
+    title: "Experienced Team",
+    desc: "Over 20 years in landscaping",
     list: [
-      "Available in maket the printing",
-      "Lorem Ipsum siply dummy",
-      "market the printing",
+      "Providing expert lawn care services",
+      "Designing beautiful, functional outdoor spaces",
+      "Using sustainable practices and materials",
     ],
   },
   {
-    title: "Counter In Work.",
-    desc: "Lorem Ipsum is",
+    title: "Customer Satisfaction",
+    desc: "Our top priority",
     list: [
-      "Available in maket the printing",
-      "Lorem Ipsum siply dummy",
-      "market the printing",
+      "Tailoring solutions to meet your needs",
+      "Ensuring timely and efficient service",
+      "Delivering exceptional results every time",
     ],
   },
 ];
@@ -60,7 +60,7 @@ export default function WhyUs() {
           variants={fadeInAnimationBT}
           className="mb-6 mt-5 font-jost text-[2.875rem] font-medium tracking-[-1px]"
         >
-          We Have The Perfect Solution For You
+          We Have The Perfect Solution For Your Landscape
         </motion.p>
         <motion.p
           initial="initial"
@@ -69,10 +69,10 @@ export default function WhyUs() {
           variants={fadeInAnimationBT}
           className="leading-[30px]"
         >
-          Lorem Ipsum is simply dummy text of free available in market the
-          typesetting industry has been the industrys standard dummy text ever.
-          Lorem Ipsum is simply dummy text of free available in market the
-          printing
+          At Getree, we transform outdoor spaces with our expert landscaping
+          services. Our dedicated team uses the latest techniques and
+          sustainable practices to ensure your lawn and garden are healthy,
+          vibrant, and beautiful all year round.
         </motion.p>
         <div className="mt-8 flex w-full flex-col items-start gap-10 md:flex-row md:justify-between">
           {reasons.map((reason, idx) => (
