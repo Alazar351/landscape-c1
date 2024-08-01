@@ -1,0 +1,94 @@
+"use client";
+
+import Image from "next/image";
+import { Email, Map, Pad } from "../../public";
+import Leaf from "../../public/assets/leaf-contact.png";
+import Bg from "../../public/assets/group-contact.png";
+import ContactForm from "./ContactForm";
+import { motion } from "framer-motion";
+import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
+
+const contactDetails = [
+  {
+    title: "Our Address",
+    desc: "2 St. Loskia sripur, amukara",
+    icon: (
+      <Map className="size-[60px] rounded-xl bg-[hsl(120_32%_47%)] fill-white p-3.5" />
+    ),
+  },
+  {
+    title: "Our Phone",
+    desc: "000 2324 34942",
+    icon: (
+      <Pad className="size-[60px] rounded-xl bg-[hsl(120_32%_47%)] fill-white p-3.5" />
+    ),
+  },
+  {
+    title: "Our Email",
+    desc: "name@website.com",
+    icon: (
+      <Email className="size-[60px] rounded-xl bg-[hsl(120_32%_47%)] fill-white p-3.5" />
+    ),
+  },
+];
+
+export default function Contact() {
+  return (
+    <section className="relative -z-20 bg-background px-4 py-[60px]">
+      <Image
+        src={Bg}
+        alt="background"
+        aria-hidden
+        fill
+        className="pointer-events-none absolute inset-0 -z-10 object-cover object-right"
+      />
+      <div className="container z-20 grid md:grid-cols-2">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInAnimationBT}
+        >
+          <h2 className="uppercase tracking-[3.8px] text-primary">
+            Get In Touch
+          </h2>
+          <p className="mb-6 mt-5 font-jost text-[2.875rem] font-medium tracking-[-1px]">
+            We want to share our location to find us easily
+          </p>
+        </motion.div>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInAnimationBT}
+          className="mb-12"
+        >
+          <ContactForm />
+        </motion.div>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInAnimationLR}
+          className="relative flex flex-col gap-8 overflow-clip rounded-lg bg-primary py-11 pl-9 text-white md:-mr-[40px] md:-mt-[360px]"
+        >
+          {contactDetails.map((detail, idx) => (
+            <div key={idx} className="flex gap-6">
+              {detail.icon}
+              <div className="space-y-1">
+                <p className="font-jost text-xl font-bold">{detail.title}</p>
+                <p>{detail.desc}</p>
+              </div>
+            </div>
+          ))}
+          <Image
+            src={Leaf}
+            alt="background"
+            aria-hidden
+            className="absolute -bottom-6 -right-6"
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+}

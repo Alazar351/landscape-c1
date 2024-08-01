@@ -141,7 +141,6 @@ export default function Team() {
         src={Bg}
         alt="background"
         fill
-        priority
         placeholder="blur"
         sizes="100vw"
         className="pointer-events-none absolute inset-0 z-0 object-cover object-center"

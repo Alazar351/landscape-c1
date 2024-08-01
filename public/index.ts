@@ -16,3 +16,7 @@ export { default as Quote } from "./svg/Quote.svg";
 export { default as Stats } from "./svg/Stats.svg";
 export { default as Gear } from "./svg/Gear.svg";
 export { default as Check } from "./svg/Check.svg";
+export { default as Loading } from "./svg/Loading.svg";
+export { default as Email } from "./svg/Email.svg";
+export { default as Pad } from "./svg/Pad.svg";
+export { default as Map } from "./svg/Map.svg";
