@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Rubik, Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import TopScroll from "@/components/TopScroll";
 
 const rubik = Rubik({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"], variable: "--jost" });
@@ -17,10 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={`${rubik.className} ${jost.variable}`}>
         <Navbar />
         {children}
+        <Footer />
+        <TopScroll />
       </body>
     </html>
   );
