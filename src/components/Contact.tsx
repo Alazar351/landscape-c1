@@ -1,31 +1,30 @@
-"use client";
-
 import Image from "next/image";
 import { Email, Map, Pad } from "../../public";
 import Leaf from "../../public/assets/leaf-contact.png";
 import Bg from "../../public/assets/group-contact.png";
 import ContactForm from "./ContactForm";
-import { motion } from "framer-motion";
 import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
+import FramerFade from "./FramerAnimations";
+import { address, email, phone } from "@/data/general";
 
 const contactDetails = [
   {
     title: "Our Address",
-    desc: "2 St. Loskia sripur, amukara",
+    desc: address,
     icon: (
       <Map className="size-[60px] rounded-xl bg-[hsl(120_32%_47%)] fill-white p-3.5" />
     ),
   },
   {
     title: "Our Phone",
-    desc: "000 2324 34942",
+    desc: phone,
     icon: (
       <Pad className="size-[60px] rounded-xl bg-[hsl(120_32%_47%)] fill-white p-3.5" />
     ),
   },
   {
     title: "Our Email",
-    desc: "name@website.com",
+    desc: email,
     icon: (
       <Email className="size-[60px] rounded-xl bg-[hsl(120_32%_47%)] fill-white p-3.5" />
     ),
@@ -34,7 +33,7 @@ const contactDetails = [
 
 export default function Contact() {
   return (
-    <section className="relative -z-20 bg-background px-4 py-[60px]">
+    <section className="relative z-20 bg-background px-4 py-[60px]">
       <Image
         src={Bg}
         alt="background"
@@ -43,33 +42,19 @@ export default function Contact() {
         className="pointer-events-none absolute inset-0 -z-10 object-cover object-right"
       />
       <div className="container z-20 grid md:grid-cols-2">
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationBT}
-        >
+        <FramerFade variant={fadeInAnimationBT}>
           <h2 className="uppercase tracking-[3.8px] text-primary">
             Get In Touch
           </h2>
           <p className="mb-6 mt-5 font-jost text-[2.875rem] font-medium tracking-[-1px]">
             We want to share our location to find us easily
           </p>
-        </motion.div>
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationBT}
-          className="mb-12"
-        >
+        </FramerFade>
+        <FramerFade variant={fadeInAnimationBT} className="mb-12">
           <ContactForm />
-        </motion.div>
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationLR}
+        </FramerFade>
+        <FramerFade
+          variant={fadeInAnimationLR}
           className="relative flex flex-col gap-8 overflow-clip rounded-lg bg-primary py-11 pl-9 text-white md:-mr-[40px] md:-mt-[360px]"
         >
           {contactDetails.map((detail, idx) => (
@@ -87,7 +72,7 @@ export default function Contact() {
             aria-hidden
             className="absolute -bottom-6 -right-6"
           />
-        </motion.div>
+        </FramerFade>
       </div>
     </section>
   );

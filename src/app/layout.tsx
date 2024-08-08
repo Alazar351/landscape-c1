@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Inter, Rubik, Jost } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import TopScroll from "@/components/TopScroll";
+import type { Metadata } from "next";
+import { Jost, Rubik } from "next/font/google";
+import "./globals.css";
 
 const rubik = Rubik({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"], variable: "--jost" });

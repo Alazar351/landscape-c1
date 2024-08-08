@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Location,
   Mail,
@@ -10,7 +11,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { address, email } from "@/data/general";
 
 export default function TopBanner() {
   const pathname = usePathname();
@@ -18,36 +19,59 @@ export default function TopBanner() {
   return (
     <div
       className={cn(
-        "flex min-h-[52px] flex-col items-center justify-between bg-transparent px-4 sm:flex-row",
-        pathname !== "/" && "bg-primary text-white",
+        "flex min-h-[52px] flex-col items-center justify-between bg-transparent fill-primary-foreground px-4 text-primary-foreground sm:flex-row",
+        pathname !== "/" &&
+          "space-y-2 bg-primary fill-white py-4 text-white sm:space-y-0",
       )}
     >
       <div className="flex items-center justify-center gap-1">
-        <Location className="size-3 bg-transparent fill-primary-foreground" />
-        <p className="text-primary-foreground">
-          2072, Pinnickkinick Street, WA 98370
-        </p>
+        <Location className="size-3" />
+        <p>{address}</p>
       </div>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
         <Link
           href="/Contact"
-          className="flex items-center justify-center gap-1 text-primary-foreground transition-colors duration-300 ease-in-out hover:text-primary"
+          className={cn(
+            "flex items-center justify-center gap-1 transition-colors duration-300 ease-in-out hover:text-primary",
+            pathname !== "/" && "hover:text-primary-foreground",
+          )}
         >
-          <Mail className="size-4 fill-primary-foreground" />
-          <p>info@website.com</p>
+          <Mail className="size-4 fill-current" />
+          <p>{email}</p>
         </Link>
         <div className="flex items-center justify-center">
           <Link href="#" className="group pl-5">
-            <Facebook className="size-4 fill-primary-foreground transition-colors duration-300 ease-in-out group-hover:fill-primary" />
+            <Facebook
+              className={cn(
+                "size-4 fill-current transition-colors duration-300 ease-in-out group-hover:fill-primary",
+                pathname !== "/" && "group-hover:fill-primary-foreground",
+              )}
+            />
           </Link>
           <Link href="#" className="group pl-5">
-            <Twitter className="size-3 fill-primary-foreground stroke-primary-foreground transition-colors duration-300 ease-in-out group-hover:fill-primary group-hover:stroke-primary-foreground" />
+            <Twitter
+              className={cn(
+                "size-3 fill-current stroke-current transition-colors duration-300 ease-in-out group-hover:fill-primary group-hover:stroke-primary",
+                pathname !== "/" &&
+                  "group-hover:fill-primary-foreground group-hover:stroke-primary-foreground",
+              )}
+            />
           </Link>
           <Link href="#" className="group pl-5">
-            <Google className="size-5 fill-primary-foreground transition-colors duration-300 ease-in-out group-hover:fill-primary" />
+            <Google
+              className={cn(
+                "size-5 fill-current transition-colors duration-300 ease-in-out group-hover:fill-primary group-hover:stroke-primary",
+                pathname !== "/" && "group-hover:fill-primary-foreground",
+              )}
+            />
           </Link>
           <Link href="#" className="group pl-5">
-            <Instagram className="size-4 fill-primary-foreground transition-colors duration-300 ease-in-out group-hover:fill-primary" />
+            <Instagram
+              className={cn(
+                "size-4 fill-current transition-colors duration-300 ease-in-out group-hover:fill-primary",
+                pathname !== "/" && "group-hover:fill-primary-foreground",
+              )}
+            />
           </Link>
         </div>
       </div>

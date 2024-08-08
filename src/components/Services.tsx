@@ -1,12 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import Bg from "../../public/assets/mask-services.png";
 import CardBg from "../../public/assets/service-card-bg.png";
 import { Gloves, Tools, WateringCan, Sprout } from "../../public";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import FramerFade from "./FramerAnimations";
+import { fadeInAnimationBT } from "@/data/motions";
 
 const services = [
   {
@@ -47,20 +46,6 @@ const services = [
   },
 ];
 
-const fadeInAnimationBT = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 export default function Services() {
   return (
     <section className="relative bg-background py-[120px]">
@@ -83,13 +68,7 @@ export default function Services() {
         </div>
         <div className="grid w-full gap-[30px] px-4 sm:grid-cols-2">
           {services.map((service, idx) => (
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInAnimationBT}
-              key={idx}
-            >
+            <FramerFade variant={fadeInAnimationBT} key={idx}>
               <div className="group relative flex w-full flex-col items-center justify-center gap-5 overflow-hidden rounded-lg bg-white px-5 py-8 transition-transform duration-700 ease-in-out hover:-translate-y-2 sm:flex-row sm:items-start">
                 <Image
                   src={CardBg}
@@ -117,7 +96,7 @@ export default function Services() {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </FramerFade>
           ))}
         </div>
       </div>

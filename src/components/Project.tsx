@@ -1,25 +1,17 @@
-"use client";
-
 import Image from "next/image";
 import { shortCards } from "@/data/project";
 import { fadeInAnimationBT } from "@/data/motions";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import FramerFade from "./FramerAnimations";
 
 export default function Projects() {
   return (
     <section className="py-[60px]">
       <div className="container grid gap-x-[30px] gap-y-6 px-4 sm:grid-cols-2">
         {shortCards.map((card, idx) => (
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInAnimationBT}
-            key={idx}
-          >
+          <FramerFade variant={fadeInAnimationBT} key={idx}>
             <div className="group relative w-full overflow-hidden rounded-xl">
               <Image
                 src={card.img}
@@ -49,7 +41,7 @@ export default function Projects() {
                 </Button>
               </div>
             </div>
-          </motion.div>
+          </FramerFade>
         ))}
       </div>
     </section>

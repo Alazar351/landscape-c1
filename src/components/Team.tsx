@@ -6,6 +6,8 @@ import Team1 from "../../public/assets/team1.png";
 import { Facebook, Instagram, Twitter } from "../../public";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import FramerFade from "./FramerAnimations";
+import { fadeInAnimationBT } from "@/data/motions";
 
 type TeamType = {
   name: string;
@@ -120,20 +122,6 @@ const members: TeamType = [
   },
 ];
 
-const fadeInAnimationBT = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 export default function Team() {
   return (
     <section className="relative bg-primary-foreground py-[60px]">
@@ -156,13 +144,7 @@ export default function Team() {
         </div>
         <div className="grid gap-[30px] sm:grid-cols-2 md:grid-cols-3">
           {members.map((member, idx) => (
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInAnimationBT}
-              key={idx}
-            >
+            <FramerFade variant={fadeInAnimationBT} key={idx}>
               <div className="mx-4 flex flex-col items-center rounded-md bg-[hsl(150_36%_25%)] p-[30px]">
                 <div className="group relative mb-8 w-full overflow-hidden rounded-2xl">
                   <Image
@@ -189,7 +171,7 @@ export default function Team() {
                   {member.position}
                 </p>
               </div>
-            </motion.div>
+            </FramerFade>
           ))}
         </div>
       </div>

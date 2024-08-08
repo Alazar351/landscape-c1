@@ -1,8 +1,6 @@
-"use client";
-
 import { fadeInAnimationBT } from "@/data/motions";
-import { motion } from "framer-motion";
 import { GreenHouse, Seeding, Sprout, Tools } from "../../public";
+import FramerFade from "./FramerAnimations";
 
 const steps = [
   {
@@ -31,31 +29,20 @@ export default function Process() {
   return (
     <section className="py-[60px]">
       <div className="container flex flex-col items-center justify-center px-4">
-        <motion.h2
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationBT}
-          className="uppercase tracking-[3.8px] text-primary"
-        >
-          Work Process
-        </motion.h2>
-        <motion.p
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationBT}
-          className="mb-6 mt-5 text-center font-jost text-[2.875rem] font-medium tracking-[-1px]"
-        >
-          We Complete Every Step Carefully
-        </motion.p>
+        <FramerFade variant={fadeInAnimationBT}>
+          <h2 className="uppercase tracking-[3.8px] text-primary">
+            Work Process
+          </h2>
+        </FramerFade>
+        <FramerFade variant={fadeInAnimationBT}>
+          <p className="mb-6 mt-5 text-center font-jost text-[2.875rem] font-medium tracking-[-1px]">
+            We Complete Every Step Carefully
+          </p>
+        </FramerFade>
         <div className="mt-[60px] grid w-full items-center gap-[30px] md:grid-cols-2">
           {steps.map((step, idx) => (
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInAnimationBT}
+            <FramerFade
+              variant={fadeInAnimationBT}
               key={idx}
               className="flex w-full flex-col items-center justify-center gap-x-16 gap-y-9 sm:flex-row"
             >
@@ -71,7 +58,7 @@ export default function Process() {
                 </p>
                 <p className="text-primary-foreground">{step.desc}</p>
               </div>
-            </motion.div>
+            </FramerFade>
           ))}
         </div>
       </div>

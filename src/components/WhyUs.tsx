@@ -1,11 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Bg from "../../public/assets/whyus.png";
 import Logo from "../../public/assets/Logo.png";
 import { Check } from "../../public";
-import { motion } from "framer-motion";
 import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
+import FramerFade from "./FramerAnimations";
 
 const reasons = [
   {
@@ -44,45 +42,25 @@ export default function WhyUs() {
         </div>
       </div>
       <div className="flex flex-col items-start justify-start bg-primary px-6 py-[60px] text-white">
-        <motion.h2
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationBT}
-          className="uppercase tracking-[3.8px]"
-        >
-          Why Us
-        </motion.h2>
-        <motion.p
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationBT}
-          className="mb-6 mt-5 font-jost text-[2.875rem] font-medium tracking-[-1px]"
-        >
-          We Have The Perfect Solution For Your Landscape
-        </motion.p>
-        <motion.p
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInAnimationBT}
-          className="leading-[30px]"
-        >
-          At Getree, we transform outdoor spaces with our expert landscaping
-          services. Our dedicated team uses the latest techniques and
-          sustainable practices to ensure your lawn and garden are healthy,
-          vibrant, and beautiful all year round.
-        </motion.p>
+        <FramerFade variant={fadeInAnimationBT}>
+          <h2 className="uppercase tracking-[3.8px]">Why Us</h2>
+        </FramerFade>
+        <FramerFade variant={fadeInAnimationBT}>
+          <p className="mb-6 mt-5 font-jost text-[2.875rem] font-medium tracking-[-1px]">
+            We Have The Perfect Solution For Your Landscape
+          </p>
+        </FramerFade>
+        <FramerFade variant={fadeInAnimationBT}>
+          <p className="leading-[30px]">
+            At Getree, we transform outdoor spaces with our expert landscaping
+            services. Our dedicated team uses the latest techniques and
+            sustainable practices to ensure your lawn and garden are healthy,
+            vibrant, and beautiful all year round.
+          </p>
+        </FramerFade>
         <div className="mt-8 flex w-full flex-col items-start gap-10 md:flex-row md:justify-between">
           {reasons.map((reason, idx) => (
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInAnimationLR}
-              key={idx}
-            >
+            <FramerFade variant={fadeInAnimationLR} key={idx}>
               <div className="flex flex-col items-center justify-center">
                 <div className="flex items-center justify-center gap-3">
                   <div className="flex size-[70px] items-center justify-center rounded-full bg-[hsl(120_32%_47%)] text-xl text-white">
@@ -104,7 +82,7 @@ export default function WhyUs() {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </FramerFade>
           ))}
         </div>
       </div>

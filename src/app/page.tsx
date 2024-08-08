@@ -16,11 +16,11 @@ export default function Home() {
       <MainServices />
       <About />
       <Services />
-      <Team />
       <Projects />
-      <Testimonials />
       <WhyUs />
+      <Team />
       <Process />
+      <Testimonials />
       <Contact />
     </>
   );

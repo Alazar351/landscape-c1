@@ -12,30 +12,23 @@ import { reviews } from "@/data/clients";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeInAnimationBT } from "@/data/motions";
+import FramerFade from "./FramerAnimations";
 
 export default function Testimonials() {
   return (
     <section className="mb-[60px] py-[60px]">
       <div className="container flex flex-col items-center justify-center px-4">
         <div className="text-center">
-          <motion.h2
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInAnimationBT}
-            className="uppercase tracking-[3.8px] text-primary"
-          >
-            Client Testimonials
-          </motion.h2>
-          <motion.p
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInAnimationBT}
-            className="my-5 font-jost text-[2.875rem] font-medium tracking-[-1px] text-[#181818]"
-          >
-            What our clients say
-          </motion.p>
+          <FramerFade variant={fadeInAnimationBT}>
+            <h2 className="uppercase tracking-[3.8px] text-primary">
+              Client Testimonials
+            </h2>
+          </FramerFade>
+          <FramerFade variant={fadeInAnimationBT}>
+            <p className="my-5 font-jost text-[2.875rem] font-medium tracking-[-1px] text-[#181818]">
+              What our clients say
+            </p>
+          </FramerFade>
         </div>
         <Swiper
           slidesPerView={1}
