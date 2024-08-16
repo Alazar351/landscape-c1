@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Bg from "../../public/assets/herobg.jpg";
+import Bg from "@public/assets/herobg.jpg";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import Img from "../../public/assets/heroimgv.png";
+import Img from "@public/assets/heroimgv.png";
 import { motion } from "framer-motion";
 import { FramerContainer, FramerItem } from "./FramerAnimations";
 
@@ -15,6 +15,7 @@ export default function Hero() {
         src={Bg}
         alt="background"
         fill
+        aria-hidden="true"
         priority
         placeholder="blur"
         sizes="100vw"

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Bg from "../../public/assets/whyus.png";
-import Logo from "../../public/assets/Logo.png";
-import { Check } from "../../public";
+import Bg from "@public/assets/whyus.png";
+import Logo from "@public/assets/Logo.png";
+import { Check } from "@public/index";
 import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
 import FramerFade from "./FramerAnimations";
 

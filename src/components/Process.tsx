@@ -1,5 +1,5 @@
 import { fadeInAnimationBT } from "@/data/motions";
-import { GreenHouse, Seeding, Sprout, Tools } from "../../public";
+import { GreenHouse, Seeding, Sprout, Tools } from "@public/index";
 import FramerFade from "./FramerAnimations";
 
 const steps = [

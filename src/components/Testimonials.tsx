@@ -6,11 +6,10 @@ import "swiper/css";
 // import required modules
 import { Autoplay } from "swiper/modules";
 
-import Bg from "../../public/assets/mask-testimonial-box.png";
-import { Quote } from "../../public";
+import Bg from "@public/assets/mask-testimonial-box.png";
+import { Quote } from "@public/index";
 import { reviews } from "@/data/clients";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { fadeInAnimationBT } from "@/data/motions";
 import FramerFade from "./FramerAnimations";
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Bg from "../../public/assets/mask-services.png";
-import CardBg from "../../public/assets/service-card-bg.png";
-import { Gloves, Tools, WateringCan, Sprout } from "../../public";
+import Bg from "@public/assets/mask-services.png";
+import CardBg from "@public/assets/service-card-bg.png";
+import { Gloves, Tools, WateringCan, Sprout } from "@public/index";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import FramerFade from "./FramerAnimations";
@@ -53,6 +53,7 @@ export default function Services() {
         src={Bg}
         alt="background"
         fill
+        aria-hidden="true"
         placeholder="blur"
         sizes="100vw"
         className="pointer-events-none absolute inset-0 z-0 object-cover object-center"

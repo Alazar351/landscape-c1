@@ -1,11 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import Bg from "../../public/assets/mask-team.png";
-import Team1 from "../../public/assets/team1.png";
-import { Facebook, Instagram, Twitter } from "../../public";
+import Bg from "@public/assets/mask-team.png";
+import Team1 from "@public/assets/team1.png";
+import { Facebook, Instagram, Twitter } from "@public/index";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import FramerFade from "./FramerAnimations";
 import { fadeInAnimationBT } from "@/data/motions";
 
@@ -129,6 +126,7 @@ export default function Team() {
         src={Bg}
         alt="background"
         fill
+        aria-hidden="true"
         placeholder="blur"
         sizes="100vw"
         className="pointer-events-none absolute inset-0 z-0 object-cover object-center"

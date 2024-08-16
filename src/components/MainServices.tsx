@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FruitBox, Gloves, Sprout, Tools } from "../../public";
+import { FruitBox, Gloves, Sprout, Tools } from "@public/index";
 import FramerFade from "./FramerAnimations";
 import { fadeInAnimationBT } from "@/data/motions";
 

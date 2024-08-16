@@ -70,18 +70,25 @@
   * {
     @apply border-border;
   }
+
   .underline-effect {
     @apply relative p-0;
   }
-
   .underline-effect::after {
     @apply absolute bottom-[-4px] left-0 h-[3px] w-full origin-bottom-right scale-x-0 bg-primary transition-transform duration-300 content-[''] hover:origin-bottom-left hover:scale-x-100;
   }
+
   .underline-effect-white {
     @apply relative p-0;
   }
-
   .underline-effect-white::after {
     @apply absolute bottom-[-4px] left-0 h-[3px] w-full origin-bottom-left scale-x-0 bg-white transition-transform duration-300 content-[''] hover:scale-x-100;
+  }
+
+  .underline-text {
+    @apply relative;
+  }
+  .underline-text::after {
+    @apply absolute -bottom-2 left-0 h-[1px] w-full origin-left scale-x-[.1] bg-primary content-[''];
   }
 }

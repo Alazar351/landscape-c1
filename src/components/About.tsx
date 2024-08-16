@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Img from "../../public/assets/about1.png";
-import Img2 from "../../public/assets/about2.png";
+import Img from "@public/assets/about1.png";
+import Img2 from "@public/assets/about2.png";
 import AnimatedCounter from "./AnimatedCounter";
-import { Gear, Stats } from "../../public";
+import { Gear, Stats } from "@public/index";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import FramerFade from "./FramerAnimations";
@@ -15,7 +15,6 @@ export default function About() {
         <div className="relative flex w-full flex-col items-center justify-center">
           <Image
             src={Img}
-            loading="lazy"
             alt="Professional gardener inspecting vibrant red flowers and potted plants in a greenhouse for a landscaping project."
             className="z-0 aspect-square rounded-full"
           />

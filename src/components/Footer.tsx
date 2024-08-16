@@ -1,8 +1,9 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { Location, Mail, Phone } from "../../public";
+import { Location, Mail, Phone } from "@public/index";
 import Image from "next/image";
-import Logo from "../../public/assets/Logo.png";
+import Logo from "@public/assets/Logo.png";
+import Bg from "@public/assets/mask-group-6.png";
 import { fadeInAnimationBT } from "@/data/motions";
 import FramerFade from "./FramerAnimations";
 import { address, email, phone } from "@/data/general";
@@ -62,7 +63,16 @@ const sections = [
 
 export default function Footer() {
   return (
-    <section className="relative bg-primary-foreground px-4 pb-[30px] pt-[60px] md:px-8">
+    <section className="relative z-0 bg-primary-foreground px-4 pb-[30px] pt-[60px] md:px-8">
+      <Image
+        src={Bg}
+        alt="background"
+        fill
+        aria-hidden="true"
+        placeholder="blur"
+        sizes="100vw"
+        className="pointer-events-none absolute -z-10 object-cover object-center"
+      />
       <div className="grid grid-cols-1 items-center justify-center gap-12 md:grid-cols-2 lg:grid-cols-4">
         <FramerFade variant={fadeInAnimationBT}>
           <Link

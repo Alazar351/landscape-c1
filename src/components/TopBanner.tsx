@@ -7,7 +7,7 @@ import {
   Twitter,
   Google,
   Instagram,
-} from "../../public";
+} from "@public/index";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";

@@ -1,4 +1,5 @@
 "use client";
+
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -48,14 +49,14 @@ export default function Navbar() {
       <div
         className={cn(
           "sticky top-0 z-50",
-          pathname == "/" && "container absolute inset-x-0 top-0 px-4",
+          pathname == "/" && "container absolute inset-x-0 px-4",
         )}
       >
         {pathname == "/" && <TopBanner />}
         <div
           className={cn(
             "relative z-50 mt-4 flex h-[100px] items-center justify-between rounded-md bg-white px-4 sm:mt-0",
-            pathname !== "/" && "sticky top-0 rounded-none",
+            pathname !== "/" && "mt-0 rounded-none bg-background",
           )}
         >
           <Link href="/">

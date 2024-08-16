@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Email, Map, Pad } from "../../public";
-import Leaf from "../../public/assets/leaf-contact.png";
-import Bg from "../../public/assets/group-contact.png";
+import { Email, Map, Pad } from "@public/index";
+import Leaf from "@public/assets/leaf-contact.png";
+import Bg from "@public/assets/group-contact.png";
 import ContactForm from "./ContactForm";
 import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
 import FramerFade from "./FramerAnimations";
@@ -37,7 +37,7 @@ export default function Contact() {
       <Image
         src={Bg}
         alt="background"
-        aria-hidden
+        aria-hidden="true"
         fill
         className="pointer-events-none absolute inset-0 -z-10 object-cover object-right"
       />
