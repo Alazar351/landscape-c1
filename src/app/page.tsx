@@ -3,7 +3,7 @@ import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import MainServices from "@/components/MainServices";
 import Process from "@/components/Process";
-import Projects from "@/components/Project";
+import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";

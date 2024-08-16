@@ -61,7 +61,9 @@ export default function Contact() {
             <div key={idx} className="flex gap-6">
               {detail.icon}
               <div className="space-y-1">
-                <p className="font-jost text-xl font-bold">{detail.title}</p>
+                <p className="ui-input font-jost text-xl font-bold">
+                  {detail.title}
+                </p>
                 <p>{detail.desc}</p>
               </div>
             </div>

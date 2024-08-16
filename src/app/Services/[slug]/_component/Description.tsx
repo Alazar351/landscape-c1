@@ -19,7 +19,7 @@ export default function Description() {
                 src={detail.img}
                 alt={detail.id + " Image"}
                 placeholder="blur"
-                className="rounded-lg"
+                className="w-full rounded-lg"
               />
               <h2 className="mb-[30px] mt-11 font-jost text-[34px] font-bold text-primary-foreground">
                 {detail.title}

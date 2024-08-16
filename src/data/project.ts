@@ -10,27 +10,27 @@ type Projects = {
 
 export const shortCards: Projects[] = [
   {
-    title: "Finished Work",
-    desc: "Dummy text of free",
-    href: "#",
+    title: "Garden Transformation",
+    desc: "Revamped an overgrown garden into a beautifully landscaped space.",
+    href: "/Portfolio",
     img: Project1,
   },
   {
-    title: "Finished Work",
-    desc: "Dummy text of free",
-    href: "#",
+    title: "Pristine Pruning",
+    desc: "Enhanced plant health and appearance with expert pruning.",
+    href: "/Portfolio",
     img: Project1,
   },
   {
-    title: "Finished Work",
-    desc: "Dummy text of free",
-    href: "#",
+    title: "Efficient Irrigation System",
+    desc: "Installed a smart irrigation system for optimal water use.",
+    href: "/Portfolio",
     img: Project1,
   },
   {
-    title: "Finished Work",
-    desc: "Dummy text of free",
-    href: "#",
+    title: "Seasonal Garden Maintenance",
+    desc: "Maintained gardens throughout the seasons for a pristine look.",
+    href: "/Portfolio",
     img: Project1,
   },
 ];

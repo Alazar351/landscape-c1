@@ -21,8 +21,8 @@ export default function Projects() {
                 placeholder="blur"
                 className="w-full"
               />
-              <div className="absolute inset-x-10 bottom-[10%] flex h-[122px] translate-y-[140%] items-center justify-between rounded-lg bg-white pb-6 pl-5 pr-8 pt-[30px] transition-transform duration-300 ease-in-out group-hover:translate-y-0">
-                <div>
+              <div className="absolute inset-x-10 bottom-[10%] flex h-[122px] translate-y-[140%] items-center justify-between gap-x-2 rounded-lg bg-white pb-6 pl-5 pr-8 pt-[30px] transition-transform duration-300 ease-in-out group-hover:translate-y-0">
+                <div className="sm:text-xs md:text-base">
                   <Link
                     href={card.href}
                     className="font-jost text-[1.25rem] font-bold text-primary-foreground transition-colors duration-300 ease-in-out hover:text-primary"

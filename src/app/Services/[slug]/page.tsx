@@ -1,19 +1,21 @@
-import Link from "next/link";
-import Links from "./_component/Links";
+import Intro from "@/components/Intro";
 import ContactCard from "./_component/ContactCard";
 import Description from "./_component/Description";
-import Intro from "@/components/Intro";
+import Links from "./_component/Links";
 
 export default function Details() {
   return (
     <>
       <Intro />
-      <section className="container mb-10 mt-[60px] flex flex-col items-center justify-center gap-[30px] px-4 sm:mb-24 md:flex-row">
+      <section
+        id="detail-start"
+        className="container mb-10 flex flex-col items-start justify-center gap-[30px] px-4 pt-[120px] sm:mb-24 md:flex-row"
+      >
         <div className="w-full space-y-[30px]">
           <Links />
           <ContactCard />
         </div>
-        <div className="">
+        <div>
           <Description />
         </div>
       </section>
