@@ -2,8 +2,20 @@ import Intro from "@/components/Intro";
 import ContactCard from "./_component/ContactCard";
 import Description from "./_component/Description";
 import Links from "./_component/Links";
+import { details } from "@/data/services";
+import { notFound } from "next/navigation";
 
-export default function Details() {
+export async function generateStaticParams() {
+  return details.map(({ id }) => id);
+}
+
+export default function Details({ params }: { params: { slug: string } }) {
+  const detail = details.find((d) => d.id === params.slug);
+
+  if (!detail) {
+    return notFound();
+  }
+
   return (
     <>
       <Intro />
@@ -16,7 +28,7 @@ export default function Details() {
           <ContactCard />
         </div>
         <div>
-          <Description />
+          <Description detail={detail} />
         </div>
       </section>
     </>

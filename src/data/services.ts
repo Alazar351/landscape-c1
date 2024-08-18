@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import Landscaping from "../../public/assets/landscape.png";
 import PruningPlants from "../../public/assets/project1.png";
 
-type ServiceDetails = {
+export type ServiceDetails = {
   id: string;
   title: string;
   body: string;
