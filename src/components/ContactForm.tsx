@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Loading } from "../../public";
@@ -40,6 +41,7 @@ type EmailSchema = z.infer<typeof formSchema>;
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -51,16 +53,65 @@ export default function ContactForm() {
     },
   });
 
+  const verifyRecaptcha = async (token: string) => {
+    try {
+      const response = await fetch("/api/recaptcha", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ recaptchaToken: token }),
+      });
+
+      const data = await response.json();
+      return data.success;
+    } catch (error) {
+      console.error("Error verifying reCaptcha:", error);
+      return false;
+    }
+  };
+
   const sendEmail = async (data: EmailSchema) => {
     setLoading(true);
 
     try {
+      if (!executeRecaptcha) {
+        toast({ variant: "destructive", title: "reCaptcha not loaded" });
+        console.error("reCaptcha not loaded");
+
+        return;
+      }
+
+      const recaptchaToken = await executeRecaptcha("submit"); // Assuming you're using a hook like useRecaptcha
+
+      if (!recaptchaToken) {
+        toast({
+          variant: "destructive",
+          title: "reCaptcha token not generated",
+        });
+        console.error("reCaptcha token not generated");
+
+        return;
+      }
+
+      const isVerified = await verifyRecaptcha(recaptchaToken);
+
+      if (!isVerified) {
+        toast({
+          variant: "destructive",
+          title: "reCaptcha verification failed",
+        });
+        console.error("reCaptcha verification failed");
+
+        return;
+      }
+
       const response = await fetch("/api/emails", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, recaptchaToken }),
       });
 
       if (!response.ok) {
@@ -85,62 +136,22 @@ export default function ContactForm() {
   };
 
   return (
-    <div>
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(sendEmail)}
-          className="flex w-full flex-col gap-5 rounded-lg bg-white p-5 md:py-14 md:pl-16 md:pr-12"
-        >
-          <div className="flex flex-col gap-5 sm:flex-row">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => {
-                return (
-                  <FormItem className="w-full">
-                    <FormControl>
-                      <Input
-                        {...field}
-                        placeholder="Name"
-                        type="text"
-                        className="h-[70px] bg-white text-lg !ring-primary"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
-            />
-            <FormField
-              control={form.control}
-              name="emailAddress"
-              render={({ field }) => {
-                return (
-                  <FormItem className="w-full">
-                    <FormControl>
-                      <Input
-                        {...field}
-                        placeholder="Email Address"
-                        type="email"
-                        className="h-[70px] bg-white text-lg !ring-primary"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
-            />
-          </div>
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(sendEmail)}
+        className="flex w-full flex-col gap-5 rounded-lg bg-white p-5 md:py-14 md:pl-16 md:pr-12"
+      >
+        <div className="flex flex-col gap-5 sm:flex-row">
           <FormField
             control={form.control}
-            name="subject"
+            name="name"
             render={({ field }) => {
               return (
-                <FormItem>
+                <FormItem className="w-full">
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="Subject"
+                      placeholder="Name"
                       type="text"
                       className="h-[70px] bg-white text-lg !ring-primary"
                     />
@@ -151,16 +162,17 @@ export default function ContactForm() {
             }}
           />
           <FormField
-            name="message"
             control={form.control}
+            name="emailAddress"
             render={({ field }) => {
               return (
-                <FormItem>
+                <FormItem className="w-full">
                   <FormControl>
-                    <Textarea
-                      placeholder="Enter your message"
-                      className="min-h-36 resize-none bg-white text-lg !ring-primary"
+                    <Input
                       {...field}
+                      placeholder="Email Address"
+                      type="email"
+                      className="h-[70px] bg-white text-lg !ring-primary"
                     />
                   </FormControl>
                   <FormMessage />
@@ -168,15 +180,52 @@ export default function ContactForm() {
               );
             }}
           />
-          <Button
-            type="submit"
-            className="h-[60px] space-x-2 bg-primary-foreground"
-          >
-            {loading && <Loading className="size-7 fill-white" />}
-            <span className="text-lg font-medium text-white">Send Message</span>
-          </Button>
-        </form>
-      </Form>
-    </div>
+        </div>
+        <FormField
+          control={form.control}
+          name="subject"
+          render={({ field }) => {
+            return (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    {...field}
+                    placeholder="Subject"
+                    type="text"
+                    className="h-[70px] bg-white text-lg !ring-primary"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+        <FormField
+          name="message"
+          control={form.control}
+          render={({ field }) => {
+            return (
+              <FormItem>
+                <FormControl>
+                  <Textarea
+                    placeholder="Enter your message"
+                    className="min-h-36 resize-none bg-white text-lg !ring-primary"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
+        <Button
+          type="submit"
+          className="h-[60px] space-x-2 bg-primary-foreground"
+        >
+          {loading && <Loading className="size-7 fill-white" />}
+          <span className="text-lg font-medium text-white">Send Message</span>
+        </Button>
+      </form>
+    </Form>
   );
 }

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Jost, Rubik } from "next/font/google";
 import { title } from "@/data/general";
 import "./globals.css";
+import GoogleCaptchaWrapper from "@/components/GoogleCaptchaWrapper";
 
 const rubik = Rubik({ subsets: ["latin"] });
 const jost = Jost({ subsets: ["latin"], variable: "--jost" });
@@ -29,10 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${rubik.className} ${jost.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
-        <TopScroll />
+        <GoogleCaptchaWrapper>
+          <Navbar />
+          {children}
+          <Footer />
+          <TopScroll />
+        </GoogleCaptchaWrapper>
       </body>
     </html>
   );
