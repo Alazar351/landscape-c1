@@ -33,7 +33,7 @@ const contactDetails = [
 
 export default function Contact() {
   return (
-    <section className="relative z-20 bg-background px-4 py-[60px]">
+    <section className="relative z-0 bg-background px-4 py-[60px]">
       <Image
         src={Bg}
         alt="background"
@@ -50,6 +50,7 @@ export default function Contact() {
             We want to share our location to find us easily
           </p>
         </FramerFade>
+
         <FramerFade variant={fadeInAnimationBT} className="mb-12">
           <ContactForm />
         </FramerFade>

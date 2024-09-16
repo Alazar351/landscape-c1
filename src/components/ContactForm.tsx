@@ -73,7 +73,6 @@ export default function ContactForm() {
 
   const sendEmail = async (data: EmailSchema) => {
     setLoading(true);
-
     try {
       if (!executeRecaptcha) {
         toast({ variant: "destructive", title: "reCaptcha not loaded" });
@@ -122,6 +121,7 @@ export default function ContactForm() {
 
       if (responseBody && responseBody.message === "Email sent successfully") {
         toast({ title: "Email Sent" });
+
         return true;
       } else {
         toast({ variant: "destructive", title: "Email not sent" });

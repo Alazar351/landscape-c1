@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import TopScroll from "@/components/TopScroll";
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import { Jost, Rubik } from "next/font/google";
 import { title } from "@/data/general";
@@ -35,6 +36,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <TopScroll />
+          <Toaster />
         </GoogleCaptchaWrapper>
       </body>
     </html>

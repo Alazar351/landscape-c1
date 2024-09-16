@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { useClickAway } from "react-use";
 import Hamburger from "hamburger-react";
 import { Button } from "./ui/button";
+import { useToast } from "./ui/use-toast";
 
 export default function Navbar() {
   const links = [
@@ -33,6 +34,7 @@ export default function Navbar() {
       href: "/Contact",
     },
   ];
+  const { toast } = useToast();
 
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
@@ -63,6 +65,15 @@ export default function Navbar() {
             <Image src="/assets/Logo.png" alt="Logo" width={174} height={58} />
           </Link>
           <div className="hidden items-center justify-between md:flex">
+            <Button
+              onClick={() => {
+                toast({
+                  description: "Toast here",
+                });
+              }}
+            >
+              Here
+            </Button>
             <ul className="flex gap-6">
               {links.map((link, idx) => (
                 <li key={idx} className="h-[50px]">
