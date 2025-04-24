@@ -6,7 +6,7 @@ import { details } from "@/data/services";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  return details.map(({ id }) => id);
+  return details.map(({ id }) => ({ slug: id }));
 }
 
 export default function Details({ params }: { params: { slug: string } }) {

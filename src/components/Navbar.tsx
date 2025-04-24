@@ -65,15 +65,6 @@ export default function Navbar() {
             <Image src="/assets/Logo.png" alt="Logo" width={174} height={58} />
           </Link>
           <div className="hidden items-center justify-between md:flex">
-            <Button
-              onClick={() => {
-                toast({
-                  description: "Toast here",
-                });
-              }}
-            >
-              Here
-            </Button>
             <ul className="flex gap-6">
               {links.map((link, idx) => (
                 <li key={idx} className="h-[50px]">
