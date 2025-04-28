@@ -2,10 +2,10 @@
 
 import { containerVariants, itemVariants } from "@/data/motions";
 import { cn } from "@/lib/utils";
-import { motion, MotionProps, Variants } from "framer-motion";
+import { motion, Variants, HTMLMotionProps } from "framer-motion";
+import { ComponentProps } from "react";
 
-interface FramerFadeProps extends MotionProps {
-  children: React.ReactNode;
+interface FramerFadeProps extends HTMLMotionProps<"div"> {
   variant: Variants;
   className?: string;
 }
@@ -30,34 +30,29 @@ export default function FramerFade({
   );
 }
 
+type FramerChildProps = ComponentProps<typeof motion.div>;
+
 export function FramerContainer({
   children,
   className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+  ...rest
+}: FramerChildProps) {
   return (
     <motion.div
       initial="initial"
       animate="animate"
       variants={containerVariants}
-      className={className}
+      className={cn("", className)}
+      {...rest}
     >
       {children}
     </motion.div>
   );
 }
 
-export function FramerItem({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+export function FramerItem({ children, className, ...rest }: FramerChildProps) {
   return (
-    <motion.div variants={itemVariants} className={className}>
+    <motion.div variants={itemVariants} className={cn("", className)} {...rest}>
       {children}
     </motion.div>
   );
