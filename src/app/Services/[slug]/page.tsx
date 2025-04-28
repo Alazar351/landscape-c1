@@ -5,7 +5,7 @@ import Links from "./_component/Links";
 import { details } from "@/data/services";
 import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return details.map(({ id }) => ({ slug: id }));
 }
 
