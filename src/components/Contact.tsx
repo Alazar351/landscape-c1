@@ -33,7 +33,7 @@ export default function Contact() {
   return (
     <section className="relative z-0 bg-background px-4 py-[60px]">
       <Image
-        src={"/assets/group-contact.png"}
+        src={"/assets/Group-contact.png"}
         alt="background"
         aria-hidden="true"
         fill

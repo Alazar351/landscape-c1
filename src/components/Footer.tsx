@@ -63,7 +63,7 @@ export default function Footer() {
   return (
     <section className="relative z-0 bg-primary-foreground px-4 pb-[30px] pt-[60px] md:px-8">
       <Image
-        src={"/assets/mask-group-6.png"}
+        src={"/assets/Mask-group-6.png"}
         alt="background"
         fill
         aria-hidden="true"
