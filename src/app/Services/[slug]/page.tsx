@@ -9,11 +9,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return details.map(({ id }) => ({ slug: id }));
 }
 
-export default async function Details({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function Details({ params }: { params: { slug: string } }) {
   const detail = details.find((d) => d.id === params.slug);
 
   if (!detail) {
