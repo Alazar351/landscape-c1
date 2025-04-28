@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Bg from "@public/assets/landscape.png";
 import { usePathname } from "next/navigation";
 
 export default function Intro() {
@@ -19,11 +18,10 @@ export default function Intro() {
     <section className="h-[400px]">
       <div className="relative flex h-full w-full flex-col items-center justify-center gap-4 overflow-clip text-white">
         <Image
-          src={Bg}
+          src={"/assets/landscape.png"}
           alt="background"
           fill
           aria-hidden="true"
-          placeholder="blur"
           sizes="100vw"
           className="absolute -z-20 object-cover object-center"
         />

@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Bg from "@public/assets/herobg.jpg";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import Img from "@public/assets/heroimgv.png";
 import { motion } from "framer-motion";
 import { FramerContainer, FramerItem } from "./FramerAnimations";
 
@@ -12,12 +10,11 @@ export default function Hero() {
   return (
     <section className="relative flex h-[100vh] items-center justify-center overflow-hidden md:items-end">
       <Image
-        src={Bg}
+        src={"/assets/herobg.jpg"}
         alt="background"
         fill
         aria-hidden="true"
         priority
-        placeholder="blur"
         sizes="100vw"
         className="absolute inset-0 -z-10 object-cover object-center"
       />
@@ -55,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src={Img}
+              src={"/assets/heroimgv.png"}
               alt="Young women with their garden crops"
               width={800}
               height={800}

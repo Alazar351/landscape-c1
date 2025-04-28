@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { Email, Map, Pad } from "@public/index";
-import Leaf from "@public/assets/leaf-contact.png";
-import Bg from "@public/assets/group-contact.png";
 import ContactForm from "./ContactForm";
 import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
 import FramerFade from "./FramerAnimations";
@@ -35,7 +33,7 @@ export default function Contact() {
   return (
     <section className="relative z-0 bg-background px-4 py-[60px]">
       <Image
-        src={Bg}
+        src={"/assets/group-contact.png"}
         alt="background"
         aria-hidden="true"
         fill
@@ -70,7 +68,9 @@ export default function Contact() {
             </div>
           ))}
           <Image
-            src={Leaf}
+            src={"/assets/leaf-contact.png"}
+            width={177}
+            height={187}
             alt="background"
             aria-hidden
             className="absolute -bottom-6 -right-6"

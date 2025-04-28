@@ -4,7 +4,6 @@ import { title } from "@/data/general";
 import { ServiceDetails } from "@/data/services";
 import Image from "next/image";
 import { useEffect } from "react";
-import TopImg from "/public/assets/landscape.png";
 
 export default function Description({ detail }: { detail: ServiceDetails }) {
   useEffect(() => {
@@ -14,7 +13,8 @@ export default function Description({ detail }: { detail: ServiceDetails }) {
   return (
     <div>
       <Image
-        src={detail?.img || TopImg}
+        src={detail?.img || "/assets/landscape.png"}
+        fill
         alt={detail?.id + " Image"}
         placeholder="blur"
         className="w-full rounded-lg"

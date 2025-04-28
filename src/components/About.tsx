@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Img from "@public/assets/about1.png";
-import Img2 from "@public/assets/about2.png";
 import AnimatedCounter from "./AnimatedCounter";
 import { Gear, Stats } from "@public/index";
 import Link from "next/link";
@@ -14,7 +12,9 @@ export default function About() {
       <div className="container flex flex-col items-center justify-center gap-5 px-4 lg:flex-row lg:justify-between lg:gap-10">
         <div className="relative flex w-full flex-col items-center justify-center">
           <Image
-            src={Img}
+            src={"/assets/about1.png"}
+            width={944}
+            height={629}
             alt="Professional gardener inspecting vibrant red flowers and potted plants in a greenhouse for a landscaping project."
             className="z-0 aspect-square rounded-full"
           />
@@ -81,7 +81,7 @@ export default function About() {
               </FramerFade>
             </div>
             <Image
-              src={Img2}
+              src={"/assets/about2.png"}
               alt="Beautiful garden of flowers"
               width={250}
               height={200}

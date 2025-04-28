@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Bg from "@public/assets/mask-services.png";
-import CardBg from "@public/assets/service-card-bg.png";
 import { Gloves, Tools, WateringCan, Sprout } from "@public/index";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
@@ -50,11 +48,10 @@ export default function Services() {
   return (
     <section className="relative bg-background py-[120px]">
       <Image
-        src={Bg}
+        src={"/assets/mask-services.png"}
         alt="background"
         fill
         aria-hidden="true"
-        placeholder="blur"
         sizes="100vw"
         className="pointer-events-none absolute inset-0 z-0 object-cover object-center"
       />
@@ -72,7 +69,7 @@ export default function Services() {
             <FramerFade variant={fadeInAnimationBT} key={idx}>
               <div className="group relative flex w-full flex-col items-center justify-center gap-5 overflow-hidden rounded-lg bg-white px-5 py-8 transition-transform duration-700 ease-in-out hover:-translate-y-2 sm:flex-row sm:items-start">
                 <Image
-                  src={CardBg}
+                  src={"/assets/service-card-bg.png"}
                   fill
                   alt="plant background"
                   className="absolute inset-0 -z-20 scale-[1.2] object-cover object-center opacity-0 transition-all duration-500 ease-in-out group-hover:scale-100 group-hover:opacity-100"

@@ -6,7 +6,6 @@ import "swiper/css";
 // import required modules
 import { Autoplay } from "swiper/modules";
 
-import Bg from "@public/assets/mask-testimonial-box.png";
 import { Quote } from "@public/index";
 import { reviews } from "@/data/clients";
 import Image from "next/image";
@@ -71,7 +70,7 @@ export default function Testimonials() {
                   <p className="">{review.position}</p>
                   <div className="pointer-events-none absolute inset-0 z-0 translate-y-[100%] rounded-md border-2 border-primary-foreground opacity-0 transition-all duration-300 ease-in-out group-hover/body:translate-y-0 group-hover/body:opacity-100">
                     <Image
-                      src={Bg}
+                      src={"/assets/mask-testimonial-box.png"}
                       alt="Background"
                       aria-hidden
                       fill

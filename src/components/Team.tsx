@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Bg from "@public/assets/mask-team.png";
-import Team1 from "@public/assets/team1.png";
 import { Facebook, Instagram, Twitter } from "@public/index";
 import Link from "next/link";
 import FramerFade from "./FramerAnimations";
 import { fadeInAnimationBT } from "@/data/motions";
+import { JSX } from "react";
 
 type TeamType = {
   name: string;
@@ -20,7 +19,7 @@ const members: TeamType = [
   {
     name: "Jonny Sands",
     position: "Gardener",
-    img: Team1,
+    img: "/assets/team1.png",
     logos: [
       {
         social: (
@@ -45,7 +44,7 @@ const members: TeamType = [
   {
     name: "Jonny Sands",
     position: "Gardener",
-    img: Team1,
+    img: "/assets/team1.png",
     logos: [
       {
         social: (
@@ -70,7 +69,7 @@ const members: TeamType = [
   {
     name: "Jonny Sands",
     position: "Gardener",
-    img: Team1,
+    img: "/assets/team1.png",
     logos: [
       {
         social: (
@@ -95,7 +94,7 @@ const members: TeamType = [
   {
     name: "Jonny Sands",
     position: "Gardener",
-    img: Team1,
+    img: "/assets/team1.png",
     logos: [
       {
         social: (
@@ -123,11 +122,10 @@ export default function Team() {
   return (
     <section className="relative bg-primary-foreground py-[60px]">
       <Image
-        src={Bg}
+        src={"/assets/mask-team.png"}
         alt="background"
         fill
         aria-hidden="true"
-        placeholder="blur"
         sizes="100vw"
         className="pointer-events-none absolute inset-0 z-0 object-cover object-center"
       />
@@ -147,7 +145,6 @@ export default function Team() {
                 <div className="group relative mb-8 w-full overflow-hidden rounded-2xl">
                   <Image
                     src={member.img}
-                    placeholder="blur"
                     alt="A member of the team"
                     width={350}
                     height={400}

@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Bg from "@public/assets/whyus.png";
-import Logo from "@public/assets/Logo.png";
 import { Check } from "@public/index";
 import { fadeInAnimationBT, fadeInAnimationLR } from "@/data/motions";
 import FramerFade from "./FramerAnimations";
@@ -31,13 +29,21 @@ export default function WhyUs() {
     <section className="flex flex-col md:flex-row">
       <div className="relative flex w-full">
         <Image
-          src={Bg}
+          src={"/assets/whyus.png"}
+          width={1299}
+          height={836}
           alt="Overview of potted plants"
           className="object-cover object-center"
         />
         <div className="pointer-events-none absolute inset-y-0 right-0 flex w-[232px] flex-col items-center justify-center">
           <div className="flex w-full items-center justify-center rounded-[47%_0px_0px_47%] bg-background py-[50px] pl-5">
-            <Image src={Logo} alt="Logo" className="h-[60px]" />
+            <Image
+              src={"/assets/Logo.png"}
+              width={147}
+              height={58}
+              alt="Logo"
+              className="h-[60px]"
+            />
           </div>
         </div>
       </div>
