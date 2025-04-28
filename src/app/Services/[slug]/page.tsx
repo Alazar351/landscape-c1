@@ -5,17 +5,15 @@ import Links from "./_component/Links";
 import { details } from "@/data/services";
 import { notFound } from "next/navigation";
 
-interface DetailsPageProps {
-  params: {
-    slug: string;
-  };
-}
-
 export async function generateStaticParams() {
   return details.map(({ id }) => ({ slug: id }));
 }
 
-export default function Details({ params }: DetailsPageProps) {
+export default async function Details({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const detail = details.find((d) => d.id === params.slug);
 
   if (!detail) {
