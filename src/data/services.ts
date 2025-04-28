@@ -6,7 +6,7 @@ export type ServiceDetails = {
   id: string;
   title: string;
   body: string;
-  img: StaticImageData;
+  img: string;
 };
 
 export const services = [
@@ -40,7 +40,7 @@ export const details: ServiceDetails[] = [
   From seasonal planting to comprehensive lawn care, our landscaping services are customized to suit the specific needs of your property. We take pride in our attention to detail and our commitment to creating outdoor spaces that reflect your personal style and add value to your home.
   
   Trust us to turn your landscaping dreams into reality, with designs that are both aesthetically pleasing and environmentally sustainable. Let us help you create an outdoor space where you can relax, entertain, and enjoy the beauty of nature right in your own backyard.`,
-    img: Landscaping,
+    img: "/assets/landscape.png",
   },
   {
     id: "Pruning-Plants",
@@ -54,7 +54,7 @@ export const details: ServiceDetails[] = [
   Regular pruning prevents potential hazards from weak branches and encourages the development of strong, healthy structures. With our pruning services, you can enjoy a lush, well-maintained landscape that enhances your outdoor space year-round. Trust us to provide the care your plants deserve, ensuring they thrive and contribute to the overall beauty of your garden. 
   
   Contact us today to schedule your pruning service and give your garden the professional touch it needs to flourish.`,
-    img: PruningPlants,
+    img: "/assets/project1.png",
   },
   {
     id: "Irrigation-and-Drainage",
@@ -64,7 +64,7 @@ export const details: ServiceDetails[] = [
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
 
 `,
-    img: Landscaping,
+    img: "/assets/landscape.png",
   },
   {
     id: "Garden-Maintenance",
@@ -74,6 +74,6 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
 
 `,
-    img: Landscaping,
+    img: "/assets/landscape.png",
   },
 ];

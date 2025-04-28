@@ -14,9 +14,9 @@ export default function Description({ detail }: { detail: ServiceDetails }) {
     <div>
       <Image
         src={detail?.img || "/assets/landscape.png"}
-        fill
+        width={1000}
+        height={625}
         alt={detail?.id + " Image"}
-        placeholder="blur"
         className="w-full rounded-lg"
       />
       <h2 className="mb-[30px] mt-11 font-jost text-[34px] font-bold text-primary-foreground">
