@@ -9,7 +9,6 @@ import { useRef, useState } from "react";
 import { useClickAway } from "react-use";
 import Hamburger from "hamburger-react";
 import { Button } from "./ui/button";
-import { useToast } from "./ui/use-toast";
 
 export default function Navbar() {
   const links = [
@@ -34,7 +33,6 @@ export default function Navbar() {
       href: "/Contact",
     },
   ];
-  const { toast } = useToast();
 
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
