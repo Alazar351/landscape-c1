@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const transport = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
-      secure: true,
+      secure: false, // true for 465, false for other ports
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
@@ -37,9 +37,10 @@ export async function POST(req: NextRequest) {
       { message: "Email sent successfully" },
       { status: 200 },
     );
-  } catch (error) {
+  } catch (error: any) {
+    console.error("Error sending email:", error);
     return NextResponse.json(
-      { message: "Email failed to send" },
+      { message: "Email failed to send", error: error.message },
       { status: 500 },
     );
   }

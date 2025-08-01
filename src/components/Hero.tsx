@@ -57,6 +57,7 @@ export default function Hero() {
               width={800}
               height={800}
               className="object-contain"
+              priority
             />
           </motion.div>
         </FramerItem>

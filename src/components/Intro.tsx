@@ -21,6 +21,7 @@ export default function Intro() {
           src={"/assets/landscape.png"}
           alt="background"
           fill
+          priority
           aria-hidden="true"
           sizes="100vw"
           className="absolute -z-20 object-cover object-center"
